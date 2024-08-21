@@ -9,4 +9,4 @@ class Cli {
         var name = scanner.nextLine();
         System.out.println("Hello, " + name + "!");
     }
-        }
+}
