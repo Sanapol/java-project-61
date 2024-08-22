@@ -22,7 +22,8 @@ public class Even {
                     System.out.println("Correct!");
                     numberOfResponses += 1;
                 } else {
-                    System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, " + userName + "!");
+                    System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was 'yes'."
+                            + "\nLet's try again, " + userName + "!");
                     break;
                 }
             } else {
@@ -30,7 +31,8 @@ public class Even {
                     System.out.println("Correct!");
                     numberOfResponses += 1;
                 } else {
-                    System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, " + userName + "!");
+                    System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was 'yes'."
+                            + "\nLet's try again, " + userName + "!");
                     break;
                 }
             }
