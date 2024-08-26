@@ -24,6 +24,10 @@ class Engine {
                 System.out.println("Find the greatest common divisor of given numbers.");
                 questionAnswer = GCD.gameRun();
                 break;
+            case 4:
+                System.out.println("What number is missing in the progression?");
+                questionAnswer = Progression.gameRun();
+                break;
             default:
                 throw new RuntimeException("wrong operations");
         }
