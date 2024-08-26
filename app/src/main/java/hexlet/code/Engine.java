@@ -1,0 +1,40 @@
+package hexlet.code;
+
+import java.util.Scanner;
+
+class Engine {
+    public static void run(int games) {
+        Scanner scanner = new Scanner(System.in);
+        String[][] questionAnswer = new String[3][2];
+        System.out.println("Welcome to the Brain Games!");
+        System.out.println("May I have your name?");
+        var userName = scanner.nextLine();
+        System.out.println("Hello, " + userName + "!");
+
+        switch (games) {
+            case 1:
+                System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+                questionAnswer = Even.gameRun();
+                break;
+            case 2:
+                System.out.println("What is the result of the expression?");
+                questionAnswer = Calc.gameRun();
+                break;
+            default:
+                throw new RuntimeException("wrong operations");
+        }
+
+        for (var i = 0; i < 3; i++) {
+            System.out.println("Question: " + questionAnswer[i][0] + "\nYour answer: ");
+            String userAnswer = scanner.nextLine();
+            if (userAnswer.equalsIgnoreCase(questionAnswer[i][1])) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println(userAnswer + " is wrong answer ;(. Correct answer was "
+                        + questionAnswer[i][1] + ".\nLet's try again, " + userName + "!");
+                return;
+            }
+        }
+        System.out.println("Congratulations, " + userName + "!");
+    }
+}
