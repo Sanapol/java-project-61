@@ -20,6 +20,10 @@ class Engine {
                 System.out.println("What is the result of the expression?");
                 questionAnswer = Calc.gameRun();
                 break;
+            case 3:
+                System.out.println("Find the greatest common divisor of given numbers.");
+                questionAnswer = GCD.gameRun();
+                break;
             default:
                 throw new RuntimeException("wrong operations");
         }
