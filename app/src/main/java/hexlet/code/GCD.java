@@ -31,7 +31,7 @@ public class GCD {
 
         for (var i = biggerNumber; i >= 1; i--) {
             if (biggerNumber % i == 0) {
-                for(var x = lowerNumber; x >= 1; x--) {
+                for (var x = lowerNumber; x >= 1; x--) {
                     if (lowerNumber % x == 0) {
                         if (i == x) {
                             return String.valueOf(i);
