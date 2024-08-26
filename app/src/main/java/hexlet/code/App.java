@@ -10,6 +10,7 @@ class App {
                 + "\n2 - Even"
                 + "\n3 - Calc"
                 + "\n4 - GCD"
+                + "\n5 - Progression"
                 + "\n0 - Exit");
         var choice = scanner.nextInt();
         switch (choice) {
@@ -26,6 +27,9 @@ class App {
                 break;
             case 4:
                 Engine.run(3);
+                break;
+            case 5:
+                Engine.run(4);
                 break;
             default:
                 throw new RuntimeException("wrong operations");
