@@ -6,9 +6,9 @@ class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter."
-                + "\n3 - Calc"
-                + "\n2 - Even"
                 + "\n1 - Greet"
+                + "\n2 - Even"
+                + "\n3 - Calc"
                 + "\n0 - Exit");
         var choice = scanner.nextInt();
         switch (choice) {
