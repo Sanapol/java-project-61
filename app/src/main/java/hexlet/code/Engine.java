@@ -1,11 +1,15 @@
 package hexlet.code;
 
+import hexlet.code.games.*;
+
+import hexlet.code.Constants;
+
 import java.util.Scanner;
 
 class Engine {
     public static void run(int games) {
         Scanner scanner = new Scanner(System.in);
-        String[][] questionAnswer = new String[3][2];
+        String[][] questionAnswer = new String[Constants.NUMBER_OF_ROUNDS][Constants.ONE_ROUND];
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
         var userName = scanner.nextLine();
@@ -28,11 +32,15 @@ class Engine {
                 System.out.println("What number is missing in the progression?");
                 questionAnswer = Progression.gameRun();
                 break;
+            case 5:
+                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+                questionAnswer = Prime.gameRun();
+                break;
             default:
                 throw new RuntimeException("wrong operations");
         }
 
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < Constants.NUMBER_OF_ROUNDS; i++) {
             System.out.println("Question: " + questionAnswer[i][0] + "\nYour answer: ");
             String userAnswer = scanner.nextLine();
             if (userAnswer.equalsIgnoreCase(questionAnswer[i][1])) {
