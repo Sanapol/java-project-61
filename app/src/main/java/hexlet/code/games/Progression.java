@@ -1,14 +1,16 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Constants;
 
 public class Progression {
     public static String[][] gameRun() {
-        String[][] questionAnswer = new String[3][2];
+        String[][] questionAnswer = new String[Constants.NUMBER_OF_ROUNDS][Constants.ONE_ROUND];
 
-        for (var i = 0; i < 3; i++) {
-        int size = 5 + (int) (Math.random() * 6);
-        int position = 1 + (int) (Math.random() * size);
-        int number = (int) (Math.random() * 100);
-        int step = 1 + (int) (Math.random() * 10);
+        for (var i = 0; i < Constants.NUMBER_OF_ROUNDS; i++) {
+            int size = Constants.MIN_VALUE_SIZE + (int) (Math.random() * Constants.MAX_VALUE_SIZE);
+            int position = Constants.MIN_VALUE + (int) (Math.random() * size);
+            int number = (int) (Math.random() * Constants.MAX_VALUE);
+            int step = Constants.MIN_VALUE + (int) (Math.random() * Constants.MAX_VALUE_STEP);
             questionAnswer[i][0] = generateQuestion(size, position, number, step);
             questionAnswer[i][1] = generateAnswer(number);
         }

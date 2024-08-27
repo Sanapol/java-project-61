@@ -1,11 +1,13 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Constants;
 
 public class GCD {
     public static String[][] gameRun() {
-        String[][] questionAnswer = new String[3][2];
-        for (var i = 0; i < 3; i++) {
-            int number1 = (int) (Math.random() * 100);
-            int number2 = (int) (Math.random() * 100);
+        String[][] questionAnswer = new String[Constants.NUMBER_OF_ROUNDS][Constants.ONE_ROUND];
+        for (var i = 0; i < Constants.NUMBER_OF_ROUNDS; i++) {
+            int number1 = (int) (Math.random() * Constants.MAX_VALUE);
+            int number2 = (int) (Math.random() * Constants.MAX_VALUE);
             questionAnswer[i][0] = generateQuestion(number1, number2);
             questionAnswer[i][1] = generateAnswer(number1, number2);
         }
