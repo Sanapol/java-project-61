@@ -15,24 +15,24 @@ class App {
                 + "\n0 - Exit");
         var choice = scanner.nextInt();
         switch (choice) {
-            case 0:
+            case Constants.EXIT:
                 return;
-            case 1:
+            case Constants.RUN_CLI:
                 Cli.greeting();
                 break;
-            case 2:
+            case Constants.RUN_EVEN:
                 Engine.run(Constants.RUN_EVEN);
                 break;
-            case 3:
+            case Constants.RUN_CALC:
                 Engine.run(Constants.RUN_CALC);
                 break;
-            case 4:
+            case Constants.RUN_GCD:
                 Engine.run(Constants.RUN_GCD);
                 break;
-            case 5:
+            case Constants.RUN_PROGRESSION:
                 Engine.run(Constants.RUN_PROGRESSION);
                 break;
-            case 6:
+            case Constants.RUN_PRIME:
                 Engine.run(Constants.RUN_PRIME);
                 break;
             default:
