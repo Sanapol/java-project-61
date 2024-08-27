@@ -21,19 +21,19 @@ class App {
                 Cli.greeting();
                 break;
             case 2:
-                Engine.run(1);
+                Engine.run(Constants.RUN_EVEN);
                 break;
             case 3:
-                Engine.run(2);
+                Engine.run(Constants.RUN_CALC);
                 break;
             case 4:
-                Engine.run(3);
+                Engine.run(Constants.RUN_GCD);
                 break;
             case 5:
-                Engine.run(4);
+                Engine.run(Constants.RUN_PROGRESSION);
                 break;
             case 6:
-                Engine.run(5);
+                Engine.run(Constants.RUN_PRIME);
                 break;
             default:
                 throw new RuntimeException("wrong operations");

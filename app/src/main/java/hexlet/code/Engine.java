@@ -1,8 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
-
-import hexlet.code.Constants;
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
@@ -16,23 +18,23 @@ class Engine {
         System.out.println("Hello, " + userName + "!");
 
         switch (games) {
-            case 1:
+            case Constants.RUN_EVEN:
                 System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
                 questionAnswer = Even.gameRun();
                 break;
-            case 2:
+            case Constants.RUN_CALC:
                 System.out.println("What is the result of the expression?");
                 questionAnswer = Calc.gameRun();
                 break;
-            case 3:
+            case Constants.RUN_GCD:
                 System.out.println("Find the greatest common divisor of given numbers.");
                 questionAnswer = GCD.gameRun();
                 break;
-            case 4:
+            case Constants.RUN_PROGRESSION:
                 System.out.println("What number is missing in the progression?");
                 questionAnswer = Progression.gameRun();
                 break;
-            case 5:
+            case Constants.RUN_PRIME:
                 System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
                 questionAnswer = Prime.gameRun();
                 break;

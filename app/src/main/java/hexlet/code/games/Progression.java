@@ -40,7 +40,6 @@ public class Progression {
     }
 
     public static String generateAnswer(int number) {
-        var answer = String.valueOf(number);
-        return answer;
+        return String.valueOf(number);
     }
 }
