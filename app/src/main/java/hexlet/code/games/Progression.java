@@ -9,7 +9,7 @@ public class Progression {
         for (var i = 0; i < Constants.NUMBER_OF_ROUNDS; i++) {
             int size = Constants.MIN_VALUE_SIZE + (int) (Math.random() * Constants.MAX_VALUE_SIZE);
             int position = Constants.MIN_VALUE + (int) (Math.random() * size);
-            int number = (int) (Math.random() * Constants.MAX_VALUE);
+            int number = Constants.MIN_VALUE + (int) (Math.random() * Constants.MAX_VALUE);
             int step = Constants.MIN_VALUE + (int) (Math.random() * Constants.MAX_VALUE_STEP);
             questionAnswer[i][0] = generateQuestion(size, position, number, step);
             questionAnswer[i][1] = generateAnswer(number);

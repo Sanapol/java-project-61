@@ -6,7 +6,7 @@ public class Prime {
     public static String[][] gameRun() {
         var questionAnswer = new String[Constants.NUMBER_OF_ROUNDS][Constants.ONE_ROUND];
         for (var i = 0; i < Constants.NUMBER_OF_ROUNDS; i++) {
-            int number = (int) (Math.random() * Constants.MAX_VALUE);
+            int number = Constants.MIN_VALUE + (int) (Math.random() * Constants.MAX_VALUE);
             questionAnswer[i][0] = generateQuestion(number);
             questionAnswer[i][1] = generateAnswer(number);
         }

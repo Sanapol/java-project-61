@@ -6,8 +6,8 @@ public class Calc {
     public static String[][] gameRun() {
         String[][] questionAnswer = new String[Constants.NUMBER_OF_ROUNDS][Constants.ONE_ROUND];
         for (var i = 0; i < Constants.NUMBER_OF_ROUNDS; i++) {
-            int number1 = (int) (Math.random() * Constants.MAX_VALUE);
-            int number2 = (int) (Math.random() * Constants.MAX_VALUE);
+            int number1 = Constants.MIN_VALUE + (int) (Math.random() * Constants.MAX_VALUE);
+            int number2 = Constants.MIN_VALUE + (int) (Math.random() * Constants.MAX_VALUE);
             int operations = (int) (Math.random() * Constants.MAX_VALUE_OPERATIONS);
             questionAnswer[i][0] = createQuestion(number1, number2, operations);
             questionAnswer[i][1] = createAnswer(number1, number2, operations);
