@@ -1,18 +1,20 @@
 package hexlet.code.games;
 
 import hexlet.code.Constants;
+import hexlet.code.Engine;
 
 public class Calc {
-    public static String[][] gameRun() {
+    public static void gameRun() {
         String[][] questionAnswer = new String[Constants.NUMBER_OF_ROUNDS][Constants.ONE_ROUND];
-        for (var i = 0; i < Constants.NUMBER_OF_ROUNDS; i++) {
+        for (int i = 0; i < Constants.NUMBER_OF_ROUNDS; i++) {
             int number1 = Constants.MIN_VALUE + (int) (Math.random() * Constants.MAX_VALUE);
             int number2 = Constants.MIN_VALUE + (int) (Math.random() * Constants.MAX_VALUE);
             int operations = (int) (Math.random() * Constants.MAX_VALUE_OPERATIONS);
             questionAnswer[i][0] = createQuestion(number1, number2, operations);
             questionAnswer[i][1] = createAnswer(number1, number2, operations);
         }
-        return questionAnswer;
+        String rules = "What is the result of the expression?";
+        Engine.run(rules, questionAnswer);
     }
 
     public static String createQuestion(int number1, int number2, int operations) {
@@ -28,7 +30,7 @@ public class Calc {
     }
 
     public static String createAnswer(int number1, int number2, int operations) {
-        var result = 0;
+        int result = 0;
         switch (operations) {
             case 0:
                 result = number1 + number2;

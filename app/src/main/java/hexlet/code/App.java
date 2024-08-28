@@ -1,5 +1,11 @@
 package hexlet.code;
 
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
+
 import java.util.Scanner;
 
 class App {
@@ -13,7 +19,7 @@ class App {
                 + "\n5 - Progression"
                 + "\n6 - Prime"
                 + "\n0 - Exit");
-        var choice = scanner.nextInt();
+        int choice = scanner.nextInt();
         switch (choice) {
             case Constants.EXIT:
                 return;
@@ -21,19 +27,19 @@ class App {
                 Cli.greeting();
                 break;
             case Constants.RUN_EVEN:
-                Engine.run(Constants.RUN_EVEN);
+                Even.gameRun();
                 break;
             case Constants.RUN_CALC:
-                Engine.run(Constants.RUN_CALC);
+                Calc.gameRun();
                 break;
             case Constants.RUN_GCD:
-                Engine.run(Constants.RUN_GCD);
+                GCD.gameRun();
                 break;
             case Constants.RUN_PROGRESSION:
-                Engine.run(Constants.RUN_PROGRESSION);
+                Progression.gameRun();
                 break;
             case Constants.RUN_PRIME:
-                Engine.run(Constants.RUN_PRIME);
+                Prime.gameRun();
                 break;
             default:
                 throw new RuntimeException("wrong operations");

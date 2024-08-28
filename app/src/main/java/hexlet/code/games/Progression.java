@@ -1,9 +1,10 @@
 package hexlet.code.games;
 
 import hexlet.code.Constants;
+import hexlet.code.Engine;
 
 public class Progression {
-    public static String[][] gameRun() {
+    public static void gameRun() {
         String[][] questionAnswer = new String[Constants.NUMBER_OF_ROUNDS][Constants.ONE_ROUND];
 
         for (var i = 0; i < Constants.NUMBER_OF_ROUNDS; i++) {
@@ -14,25 +15,26 @@ public class Progression {
             questionAnswer[i][0] = generateQuestion(size, position, number, step);
             questionAnswer[i][1] = generateAnswer(number);
         }
-        return questionAnswer;
+        String rules = "What number is missing in the progression?";
+        Engine.run(rules, questionAnswer);
     }
 
     public static String generateQuestion(int size, int position, int number, int step) {
-        var forwardNumbers = size - position;
-        var backwardNumbers = size - forwardNumbers - 1;
-        var nextFrontNumber = number;
-        var nextbackNumber = number;
+        int forwardNumbers = size - position;
+        int backwardNumbers = size - forwardNumbers - 1;
+        int nextFrontNumber = number;
+        int nextbackNumber = number;
         String result = "..";
 
-        for (var i = 0; i < forwardNumbers; i++) {
-            var frontNumber = nextFrontNumber + step;
-            var stringFrontNumber = String.valueOf(frontNumber);
+        for (int i = 0; i < forwardNumbers; i++) {
+            int frontNumber = nextFrontNumber + step;
+            String stringFrontNumber = String.valueOf(frontNumber);
             result = result + " " + stringFrontNumber;
             nextFrontNumber = frontNumber;
         }
-        for (var x = 0; x < backwardNumbers; x++) {
-            var backNumber = nextbackNumber - step;
-            var stringBackNumber = String.valueOf(backNumber);
+        for (int x = 0; x < backwardNumbers; x++) {
+            int backNumber = nextbackNumber - step;
+            String stringBackNumber = String.valueOf(backNumber);
             result = stringBackNumber + " " + result;
             nextbackNumber = backNumber;
         }
