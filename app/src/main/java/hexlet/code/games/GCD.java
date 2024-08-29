@@ -10,7 +10,7 @@ public class GCD {
             int number1 = Constants.MIN_VALUE + (int) (Math.random() * Constants.MAX_VALUE);
             int number2 = Constants.MIN_VALUE + (int) (Math.random() * Constants.MAX_VALUE);
             questionAnswer[i][0] = generateQuestion(number1, number2);
-            questionAnswer[i][1] = generateAnswer(number1, number2, number1);
+            questionAnswer[i][1] = generateAnswer(number1, number2);
         }
         String rules = "Find the greatest common divisor of given numbers.";
         Engine.run(rules, questionAnswer);
@@ -22,13 +22,10 @@ public class GCD {
         return stringNumber1 + " " + stringNumber2;
     }
 
-    public static String generateAnswer(int number1, int number2, int divider) {
-        if (number1 % divider != 0) {
-            return generateAnswer(number1, number2, divider - 1);
-        } else if (number2 % divider != 0) {
-            return generateAnswer(number1, number2, divider - 1);
-        } else {
-            return String.valueOf(divider);
+    public static String generateAnswer(int number1, int number2) {
+        if (number2 == 0) {
+            return String.valueOf(number1);
         }
+        return generateAnswer(number2, number1 % number2);
     }
 }
