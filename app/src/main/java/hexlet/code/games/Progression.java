@@ -26,17 +26,18 @@ public class Progression {
         int nextbackNumber = number;
         String result = "..";
 
-        for (int i = 0; i < forwardNumbers; i++) {
-            int frontNumber = nextFrontNumber + step;
-            String stringFrontNumber = String.valueOf(frontNumber);
-            result = result + " " + stringFrontNumber;
-            nextFrontNumber = frontNumber;
-        }
-        for (int x = 0; x < backwardNumbers; x++) {
-            int backNumber = nextbackNumber - step;
-            String stringBackNumber = String.valueOf(backNumber);
-            result = stringBackNumber + " " + result;
-            nextbackNumber = backNumber;
+        for (int i = 0; i < size - 1; i++) {
+            if (i < backwardNumbers) {
+                int backNumber = nextbackNumber - step;
+                String stringBackNumber = String.valueOf(backNumber);
+                result = stringBackNumber + " " + result;
+                nextbackNumber = backNumber;
+            } else {
+                int frontNumber = nextFrontNumber + step;
+                String stringFrontNumber = String.valueOf(frontNumber);
+                result = result + " " + stringFrontNumber;
+                nextFrontNumber = frontNumber;
+            }
         }
         return result;
     }

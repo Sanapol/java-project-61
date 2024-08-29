@@ -20,6 +20,10 @@ class App {
                 + "\n6 - Prime"
                 + "\n0 - Exit");
         int choice = scanner.nextInt();
+        gameSelection(choice);
+    }
+
+    public static void gameSelection(int choice) {
         switch (choice) {
             case Constants.EXIT:
                 return;

@@ -16,4 +16,7 @@ public class Constants {
     public static final int RUN_PRIME = 6;
     public static final int RUN_CLI = 1;
     public static final int EXIT = 0;
+    public static final int OPERATOR_PLUS = 0;
+    public static final int OPERATOR_MINUS = 1;
+    public static final int OPERATOR_MULTIPLY = 2;
 }

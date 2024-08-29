@@ -18,13 +18,13 @@ public class Calc {
     }
 
     public static String createQuestion(int number1, int number2, int operations) {
-        var stringNumber1 = String.valueOf(number1);
-        var stringNumber2 = String.valueOf(number2);
+        String stringNumber1 = String.valueOf(number1);
+        String stringNumber2 = String.valueOf(number2);
 
         return switch (operations) {
-            case 0 -> stringNumber1 + " + " + stringNumber2;
-            case 1 -> stringNumber1 + " - " + stringNumber2;
-            case 2 -> stringNumber1 + " * " + stringNumber2;
+            case Constants.OPERATOR_PLUS -> stringNumber1 + " + " + stringNumber2;
+            case Constants.OPERATOR_MINUS -> stringNumber1 + " - " + stringNumber2;
+            case Constants.OPERATOR_MULTIPLY -> stringNumber1 + " * " + stringNumber2;
             default -> throw new RuntimeException("wrong operations");
         };
     }

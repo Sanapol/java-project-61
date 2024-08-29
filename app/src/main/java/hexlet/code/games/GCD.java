@@ -23,10 +23,6 @@ public class GCD {
     }
 
     public static String generateAnswer(int number1, int number2, int divider) {
-        if (number1 < number2) {
-            return generateAnswer(number2, number1, divider);
-        }
-
         if (number1 % divider != 0) {
             return generateAnswer(number1, number2, divider - 1);
         } else if (number2 % divider != 0) {
