@@ -20,26 +20,27 @@ public class Progression {
     }
 
     public static String generateQuestion(int size, int position, int number, int step) {
-        int forwardNumbers = size - position;
-        int backwardNumbers = size - forwardNumbers - 1;
+        String forwardNumbers = "";
+        String backwardNumbers = "";
         int stepNumber = number;
         String result = "..";
 
-        for (int i = 0; i < size; i++) {
-            if (i < backwardNumbers) {
+        for (int i = 1; i <= size; i++) {
+            if (i < position) {
                 int backNumber = stepNumber - step;
                 String stringBackNumber = String.valueOf(backNumber);
-                result = stringBackNumber + " " + result;
+                backwardNumbers = stringBackNumber + " " + backwardNumbers;
                 stepNumber = backNumber;
-            } else if (i == position - 1) {
+            } else if (i == position) {
                 stepNumber = number;
             } else {
                 int frontNumber = stepNumber + step;
                 String stringFrontNumber = String.valueOf(frontNumber);
-                result = result + " " + stringFrontNumber;
+                forwardNumbers = forwardNumbers + " " + stringFrontNumber;
                 stepNumber = frontNumber;
             }
         }
+        result = backwardNumbers + result + forwardNumbers;
         return result;
     }
 
