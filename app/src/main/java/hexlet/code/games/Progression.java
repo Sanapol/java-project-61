@@ -22,21 +22,22 @@ public class Progression {
     public static String generateQuestion(int size, int position, int number, int step) {
         int forwardNumbers = size - position;
         int backwardNumbers = size - forwardNumbers - 1;
-        int nextFrontNumber = number;
-        int nextbackNumber = number;
+        int stepNumber = number;
         String result = "..";
 
-        for (int i = 0; i < size - 1; i++) {
+        for (int i = 0; i < size; i++) {
             if (i < backwardNumbers) {
-                int backNumber = nextbackNumber - step;
+                int backNumber = stepNumber - step;
                 String stringBackNumber = String.valueOf(backNumber);
                 result = stringBackNumber + " " + result;
-                nextbackNumber = backNumber;
+                stepNumber = backNumber;
+            } else if (i == position - 1) {
+                stepNumber = number;
             } else {
-                int frontNumber = nextFrontNumber + step;
+                int frontNumber = stepNumber + step;
                 String stringFrontNumber = String.valueOf(frontNumber);
                 result = result + " " + stringFrontNumber;
-                nextFrontNumber = frontNumber;
+                stepNumber = frontNumber;
             }
         }
         return result;
